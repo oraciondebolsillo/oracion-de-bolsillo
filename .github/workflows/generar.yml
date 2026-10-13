@@ -1,0 +1,48 @@
+name: Generar semana
+
+on:
+  schedule:
+    - cron: "0 7 * * 0"   # cada domingo
+  workflow_dispatch:
+    inputs:
+      forzar:
+        description: "Generar aunque todavía queden publicaciones pendientes"
+        type: boolean
+        default: false
+
+concurrency:
+  group: cola
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Escribir la semana con Claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FORZAR: ${{ inputs.forzar }}
+        run: |
+          EXTRA=""
+          if [ "$FORZAR" = "true" ]; then EXTRA="--forzar"; fi
+          python -m automatizacion.generar $EXTRA
+      - name: Guardar la cola
+        if: always()
+        run: |
+          git config user.name "oracion-de-bolsillo-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add datos/cola.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Nuevas publicaciones en la cola"
+            git pull --rebase
+            git push
+          fi
