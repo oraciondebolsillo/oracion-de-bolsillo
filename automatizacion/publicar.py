@@ -40,7 +40,9 @@ def siguiente(cola, turno):
 
 def caption(item, cfg):
     tags = item["hashtags"].split()[: cfg["hashtags_max"]]
-    texto = f'{item["descripcion"]}\n\n{" ".join(tags)}'
+    cierre = (cfg.get("cierre_descripcion") or {}).get(item.get("tipo"), "").strip()
+    cuerpo = f'{item["descripcion"]}\n\n{cierre}' if cierre else item["descripcion"]
+    texto = f'{cuerpo}\n\n{" ".join(tags)}'
     if len(texto) > 2200:
         raise ErrorIG(f"La descripción de la publicación {item['id']} supera los 2200 caracteres de Instagram")
     return texto
