@@ -1,0 +1,212 @@
+{
+  "version": "Reina-Valera 1960 (RVR1960)",
+  "nota": "Solo versículos verificados contra el texto de la RVR1960. El sistema NUNCA usa un versículo que no esté aquí: el texto lo copia el código, no la IA. Isaías 40:31 empieza en mayúscula al citarlo suelto (en la Biblia sigue a otra frase). 2 Corintios 12:9 cita solo la primera frase del versículo.",
+  "versiculos": [
+    {
+      "id": "isaias-41-10",
+      "ref": "Isaías 41:10",
+      "texto": "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré, siempre te sustentaré con la diestra de mi justicia.",
+      "temas": [
+        "miedo",
+        "compañía",
+        "fortaleza"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "salmos-46-1",
+      "ref": "Salmos 46:1",
+      "texto": "Dios es nuestro amparo y fortaleza, Nuestro pronto auxilio en las tribulaciones.",
+      "temas": [
+        "refugio",
+        "dificultad",
+        "fortaleza"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "jeremias-29-11",
+      "ref": "Jeremías 29:11",
+      "texto": "Porque yo sé los pensamientos que tengo acerca de vosotros, dice Jehová, pensamientos de paz, y no de mal, para daros el fin que esperáis.",
+      "temas": [
+        "futuro",
+        "esperanza",
+        "propósito"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "mateo-11-28",
+      "ref": "Mateo 11:28",
+      "texto": "Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar.",
+      "temas": [
+        "cansancio",
+        "descanso",
+        "carga"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "proverbios-3-5",
+      "ref": "Proverbios 3:5",
+      "texto": "Fíate de Jehová de todo tu corazón, Y no te apoyes en tu propia prudencia.",
+      "temas": [
+        "confianza",
+        "decisiones"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "lamentaciones-3-22-23",
+      "ref": "Lamentaciones 3:22-23",
+      "texto": "Por la misericordia de Jehová no hemos sido consumidos, porque nunca decayeron sus misericordias. Nuevas son cada mañana; grande es tu fidelidad.",
+      "temas": [
+        "nuevo comienzo",
+        "misericordia",
+        "mañana"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "salmos-23-1",
+      "ref": "Salmos 23:1",
+      "texto": "Jehová es mi pastor; nada me faltará.",
+      "temas": [
+        "provisión",
+        "cuidado",
+        "paz"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "filipenses-4-6-7",
+      "ref": "Filipenses 4:6-7",
+      "texto": "Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios en toda oración y ruego, con acción de gracias. Y la paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones y vuestros pensamientos en Cristo Jesús.",
+      "temas": [
+        "ansiedad",
+        "paz",
+        "oración"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "filipenses-4-13",
+      "ref": "Filipenses 4:13",
+      "texto": "Todo lo puedo en Cristo que me fortalece.",
+      "temas": [
+        "fortaleza",
+        "superación"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "josue-1-9",
+      "ref": "Josué 1:9",
+      "texto": "Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
+      "temas": [
+        "valentía",
+        "miedo",
+        "compañía"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "salmos-121-1-2",
+      "ref": "Salmos 121:1-2",
+      "texto": "Alzaré mis ojos a los montes; ¿De dónde vendrá mi socorro? Mi socorro viene de Jehová, Que hizo los cielos y la tierra.",
+      "temas": [
+        "ayuda",
+        "socorro"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "salmos-34-18",
+      "ref": "Salmos 34:18",
+      "texto": "Cercano está Jehová a los quebrantados de corazón; Y salva a los contritos de espíritu.",
+      "temas": [
+        "dolor",
+        "consuelo",
+        "tristeza"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "salmos-27-1",
+      "ref": "Salmos 27:1",
+      "texto": "Jehová es mi luz y mi salvación; ¿de quién temeré? Jehová es la fortaleza de mi vida; ¿de quién he de atemorizarme?",
+      "temas": [
+        "miedo",
+        "luz",
+        "fortaleza"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "salmos-37-5",
+      "ref": "Salmos 37:5",
+      "texto": "Encomienda a Jehová tu camino, Y confía en él; y él hará.",
+      "temas": [
+        "confianza",
+        "entrega",
+        "decisiones"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "juan-14-27",
+      "ref": "Juan 14:27",
+      "texto": "La paz os dejo, mi paz os doy; yo no os la doy como el mundo la da. No se turbe vuestro corazón, ni tenga miedo.",
+      "temas": [
+        "paz",
+        "miedo",
+        "ansiedad"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "juan-16-33",
+      "ref": "Juan 16:33",
+      "texto": "Estas cosas os he hablado para que en mí tengáis paz. En el mundo tendréis aflicción; pero confiad, yo he vencido al mundo.",
+      "temas": [
+        "paz",
+        "dificultad",
+        "confianza"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "romanos-8-28",
+      "ref": "Romanos 8:28",
+      "texto": "Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien, esto es, a los que conforme a su propósito son llamados.",
+      "temas": [
+        "propósito",
+        "confianza",
+        "dificultad"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "2-corintios-12-9",
+      "ref": "2 Corintios 12:9",
+      "texto": "Y me ha dicho: Bástate mi gracia; porque mi poder se perfecciona en la debilidad.",
+      "temas": [
+        "debilidad",
+        "gracia",
+        "fortaleza"
+      ],
+      "verificado": true
+    },
+    {
+      "id": "isaias-40-31",
+      "ref": "Isaías 40:31",
+      "texto": "Pero los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como las águilas; correrán, y no se cansarán; caminarán, y no se fatigarán.",
+      "temas": [
+        "espera",
+        "fuerzas",
+        "cansancio"
+      ],
+      "verificado": true
+    }
+  ]
+}

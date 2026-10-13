@@ -1,0 +1,75 @@
+ORACIÓN DE BOLSILLO - Cómo funciona
+===================================
+
+LA CUENTA
+---------
+Nombre:   Oración de Bolsillo
+Usuario:  @oraciondebolsillo
+Foto:     salida/00_foto_de_perfil.png
+
+Biografía (copiar y pegar):
+Oración de Bolsillo 🙏
+Una oración para cada momento de tu vida
+✝️ Versículos • Reflexiones • Oraciones
+Guárdala y llévala contigo 🤍
+
+Público: Latinoamérica. Tema: fe y esperanza, en terreno común para
+católicos y evangélicos (Dios, Jesús, la Biblia, la oración).
+Versículos siempre exactos, de la Reina-Valera 1960.
+
+3 publicaciones al día, una de cada tipo. Así sabremos qué funciona mejor:
+  Mañana -> Versículo   (objetivo: que lo guarden)
+  Tarde  -> Reflexión   (objetivo: que lo compartan)
+  Noche  -> Oración     (objetivo: que comenten "Amén")
+
+
+PREPARACIÓN (solo una vez)
+--------------------------
+1. Instala Python desde https://www.python.org/downloads/
+   IMPORTANTE: marca la casilla "Add Python to PATH" al instalar.
+2. Crea la cuenta de Instagram con el nombre, la foto y la biografía de arriba.
+3. En Instagram: Configuración > Tipo de cuenta > Cambiar a cuenta profesional > Creador.
+4. Entra en https://business.facebook.com (Meta Business Suite) y conecta
+   la cuenta de Instagram. Desde ahí se programan las publicaciones gratis.
+
+
+RUTINA SEMANAL (unos 20 minutos)
+--------------------------------
+1. Pon en esta carpeta el publicaciones.json de la semana (te lo da Claude).
+2. Haz doble clic en componer.bat
+   Tarda unos 5 minutos, porque además de las imágenes crea los vídeos.
+3. En la carpeta "salida" tendrás, para cada publicación:
+     .jpg -> imagen para publicación normal
+     .mp4 -> vídeo para reel (7 segundos, sin música)
+     .txt -> descripción y hashtags para copiar y pegar
+4. Publica sobre todo los .mp4 como REELS: llegan a mucha más gente que
+   las imágenes. Añade una música suave (piano, instrumental, worship)
+   desde la propia biblioteca de Instagram al publicar.
+   Si al programar en Meta Business Suite no te deja añadir música,
+   publica el reel desde la app del móvil a la hora indicada.
+
+Todas las publicaciones llevan el mismo fondo y diseño, para que el perfil
+se vea uniforme y se reconozca al instante.
+
+
+HORARIOS (pensados para Colombia/México, en hora de España)
+------------------------------------------------------------
+Hasta el 25 de octubre:  Mañana 14:00 · Tarde 20:00 · Noche 04:00 (del día siguiente)
+Desde el 26 de octubre:  Mañana 13:00 · Tarde 19:00 · Noche 03:00 (del día siguiente)
+(España cambia de hora el 25 de octubre; Colombia y México no.)
+
+
+CADA SEMANA
+-----------
+Pídele a Claude el lote de la semana siguiente: te dará un nuevo
+publicaciones.json para sustituir este. Y cuéntale cómo fue la semana
+(qué publicaciones tuvieron más guardados, compartidos y comentarios)
+para ajustar el contenido.
+
+
+=====================================================
+MODO AUTOMATICO (recomendado)
+=====================================================
+Lee GUIA_AUTOMATICA.md. El sistema genera el contenido con Claude y
+publica solo con GitHub Actions + Instagram API, sin n8n.
+Lo de arriba (componer.bat) queda como modo manual de respaldo.

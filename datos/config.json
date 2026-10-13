@@ -1,0 +1,11 @@
+{
+  "cuenta": "@oraciondebolsillo",
+  "publicar_como": "reel",
+  "compartir_en_feed": true,
+  "con_musica": true,
+  "aprobar_automaticamente": true,
+  "hashtags_max": 5,
+  "modelo": "claude-sonnet-5-5",
+  "pendientes_minimos_para_generar": 21,
+  "minimo_aviso_por_turno": 3
+}

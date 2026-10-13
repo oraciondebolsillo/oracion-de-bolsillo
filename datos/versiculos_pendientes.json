@@ -1,0 +1,31 @@
+{
+  "nota": "Versículos elegidos pero SIN verificar todavía. No se usan hasta que se compruebe su texto y pasen a banco_versiculos.json.",
+  "referencias": [
+    "Salmos 55:22",
+    "Mateo 6:34",
+    "Romanos 8:31",
+    "Romanos 15:13",
+    "Isaías 43:2",
+    "Salmos 91:1-2",
+    "Salmos 118:24",
+    "Salmos 30:5",
+    "Eclesiastés 3:1",
+    "1 Pedro 5:7",
+    "Hebreos 11:1",
+    "Deuteronomio 31:6",
+    "Números 6:24-26",
+    "Salmos 4:8",
+    "Salmos 119:105",
+    "Salmos 32:8",
+    "Lucas 1:37",
+    "Juan 3:16",
+    "1 Tesalonicenses 5:16-18",
+    "Habacuc 2:3",
+    "Gálatas 6:9",
+    "Salmos 56:3",
+    "Salmos 147:3",
+    "Éxodo 14:14",
+    "Isaías 26:3",
+    "2 Timoteo 1:7"
+  ]
+}
