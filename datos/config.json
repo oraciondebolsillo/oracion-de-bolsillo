@@ -7,5 +7,10 @@
   "hashtags_max": 5,
   "modelo": "claude-sonnet-5-5",
   "pendientes_minimos_para_generar": 21,
-  "minimo_aviso_por_turno": 3
+  "minimo_aviso_por_turno": 3,
+  "cierre_descripcion": {
+    "versiculo": "🤍 Sígueme para recibir un versículo cada mañana.",
+    "reflexion": "🤍 Sígueme para recibir una reflexión cada tarde.",
+    "oracion": "🤍 Sígueme: cada noche una oración para ti."
+  }
 }
