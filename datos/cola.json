@@ -348,9 +348,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #paz #oracion #confianza #esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-18T12:12:05Z",
+      "ig_media_id": "18161038120499399",
+      "enlace": "https://www.instagram.com/reel/Deopy0oj9va/"
+    },
     "intentos": 0,
     "texto": "**Por nada estéis afanosos,** sino sean conocidas vuestras peticiones delante de Dios en toda oración y ruego, con acción de gracias. Y la paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones y vuestros pensamientos en Cristo Jesús.",
     "referencia": "Filipenses 4:6-7",
