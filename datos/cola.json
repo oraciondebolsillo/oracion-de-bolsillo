@@ -402,9 +402,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #ayuda #dios #esperanza #oracion",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-19T12:22:51Z",
+      "ig_media_id": "18106713911265748",
+      "enlace": "https://www.instagram.com/reel/DerP0izgePu/"
+    },
     "intentos": 0,
     "texto": "**Alzaré mis ojos a los montes;** ¿De dónde vendrá mi socorro? Mi socorro viene de Jehová, Que hizo los cielos y la tierra.",
     "referencia": "Salmos 121:1-2",
