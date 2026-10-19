@@ -374,9 +374,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #oracion #dios #sinceridad #esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-19T18:18:14Z",
+      "ig_media_id": "18143531059596046",
+      "enlace": "https://www.instagram.com/reel/Der4h89DMa6/"
+    },
     "intentos": 0,
     "texto": "**Orar no es hablar bonito;** es contarle a Dios la verdad tal como la sientes.",
     "referencia": "",
