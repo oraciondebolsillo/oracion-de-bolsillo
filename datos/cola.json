@@ -391,9 +391,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #oracion #soledad #consuelo #dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-20T02:15:23Z",
+      "ig_media_id": "17913284136545917",
+      "enlace": "https://www.instagram.com/reel/DesvI2MlT5H/"
+    },
     "intentos": 0,
     "texto": "**Dios de consuelo,** la casa está en silencio, pero sé que no estoy solo porque tú estás aquí.",
     "referencia": "",
