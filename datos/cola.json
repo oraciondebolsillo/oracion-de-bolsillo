@@ -456,9 +456,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #consuelo #dios #corazon #esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-20T12:21:09Z",
+      "ig_media_id": "17920278396243498",
+      "enlace": "https://www.instagram.com/reel/Det0a72gGgo/"
+    },
     "intentos": 0,
     "texto": "**Cercano está Jehová a los quebrantados de corazón;** Y salva a los contritos de espíritu.",
     "referencia": "Salmos 34:18",
