@@ -428,9 +428,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #paciencia #esperanza #dios #animo",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-20T18:20:25Z",
+      "ig_media_id": "18114680201026813",
+      "enlace": "https://www.instagram.com/reel/DeudiYiDQjK/"
+    },
     "intentos": 0,
     "texto": "**Avanzar despacio** sigue siendo avanzar, y Dios cuenta cada paso.",
     "referencia": "",
