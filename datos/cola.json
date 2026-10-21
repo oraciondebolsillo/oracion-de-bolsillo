@@ -482,9 +482,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #descanso #confianza #dios #paz",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-21T18:19:30Z",
+      "ig_media_id": "18451724773127514",
+      "enlace": "https://www.instagram.com/reel/DexCObojDg9/"
+    },
     "intentos": 0,
     "texto": "**Descansar** también es una forma de confiar en Dios.",
     "referencia": "",
