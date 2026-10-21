@@ -445,9 +445,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #oracion #decision #sabiduria #dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-21T02:17:17Z",
+      "ig_media_id": "17871645582647192",
+      "enlace": "https://www.instagram.com/reel/DevUJmwCL25/"
+    },
     "intentos": 0,
     "texto": "**Dios sabio,** tengo dos caminos y ninguna certeza. Guía mi decisión y dame calma para elegir.",
     "referencia": "",
