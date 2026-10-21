@@ -510,9 +510,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #paz #jesus #calma #oracion",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-21T12:21:54Z",
+      "ig_media_id": "18078022652738477",
+      "enlace": "https://www.instagram.com/reel/DewZTmHDB5o/"
+    },
     "intentos": 0,
     "texto": "**La paz os dejo, mi paz os doy;** yo no os la doy como el mundo la da. No se turbe vuestro corazón, ni tenga miedo.",
     "referencia": "Juan 14:27",
