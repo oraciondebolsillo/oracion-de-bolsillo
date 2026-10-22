@@ -536,9 +536,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #ansiedad #paz #dios #esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-22T18:18:51Z",
+      "ig_media_id": "18115301939032656",
+      "enlace": "https://www.instagram.com/reel/Dezm8u7CgcG/"
+    },
     "intentos": 0,
     "texto": "**No tienes que cargar con el mañana entero;** hoy ya trae su propio peso.",
     "referencia": "",
