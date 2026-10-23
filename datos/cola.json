@@ -590,9 +590,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #apoyo #humildad #dios #esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-23T18:17:24Z",
+      "ig_media_id": "17988786374876401",
+      "enlace": "https://www.instagram.com/reel/De2Lk3SDv1X/"
+    },
     "intentos": 0,
     "texto": "**Pedir ayuda no te hace débil;** te hace humano, y Dios trabaja con humanos.",
     "referencia": "",
