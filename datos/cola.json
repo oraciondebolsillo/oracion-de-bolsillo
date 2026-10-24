@@ -672,9 +672,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #confianza #camino #dios #oracion",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-24T12:16:17Z",
+      "ig_media_id": "18131482220494977",
+      "enlace": "https://www.instagram.com/reel/De4HChxBsAh/"
+    },
     "intentos": 0,
     "texto": "**Encomienda a Jehová tu camino,** Y confía en él; y él hará.",
     "referencia": "Salmos 37:5",
