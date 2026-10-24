@@ -607,9 +607,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #oracion #hijos #familia #dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-13",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-24T02:17:48Z",
+      "ig_media_id": "18024441287714260",
+      "enlace": "https://www.instagram.com/reel/De3Cja8Pfr3/"
+    },
     "intentos": 0,
     "texto": "**Padre bueno,** pongo a mis hijos ante ti. Dame sabiduría para guiarlos y paciencia para escucharlos.",
     "referencia": "",
