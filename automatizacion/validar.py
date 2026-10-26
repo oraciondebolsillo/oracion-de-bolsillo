@@ -72,10 +72,10 @@ def revisar_destacado(frase, destacado, max_palabras=12):
         return ["destacado: debe dejar parte de la frase sin destacar"]
     if len(destacado.split()) > max_palabras:
         return [f"destacado: máximo {max_palabras} palabras"]
-    if frase[len(destacado)] not in " ":
-        # tolerar que termine justo antes de un espacio o al final de una palabra con puntuación
-        if not destacado[-1] in ",;:.¡!¿?":
-            return ["destacado: debe terminar al final de una palabra"]
+    # Solo es un error cortar una palabra por la mitad. Si el destacado termina justo
+    # antes de una coma, un punto y coma, etc. (la IA a veces los omite), es válido.
+    if frase[len(destacado)].isalnum() and destacado[-1].isalnum():
+        return ["destacado: debe terminar al final de una palabra"]
     return []
 
 

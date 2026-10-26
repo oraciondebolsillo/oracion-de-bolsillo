@@ -40,7 +40,7 @@ def construir_prompt(faltan, candidatos, temas, recientes):
 
 1) VERSÍCULOS (publicación de la mañana). Elige de esta lista (NO escribas el versículo, solo su id), todos distintos entre sí:
 {ver}
-Para cada uno: "id", "destacado" (el comienzo EXACTO del versículo, copiado tal cual, 3 a 12 palabras, que se verá en dorado), "parrafo1" (30-240 caracteres: un gancho humano que conecte el versículo con la vida real, empieza con 1 emoji), "parrafo2" (30-240 caracteres: una aplicación práctica y cálida, empieza con 1 emoji), "hashtags" (4 a 6, en español o con #fe).
+Para cada uno: "id", "destacado" (el comienzo EXACTO del versículo, copiado tal cual y con su coma o punto y coma final si la hay, 3 a 12 palabras, que se verá en dorado), "parrafo1" (30-240 caracteres: un gancho humano que conecte el versículo con la vida real, empieza con 1 emoji), "parrafo2" (30-240 caracteres: una aplicación práctica y cálida, empieza con 1 emoji), "hashtags" (4 a 6, en español o con #fe).
 
 2) REFLEXIONES (publicación de la tarde). Una frase que dé ánimo, original, sin citar la Biblia.
 Para cada una: "frase" (30-140 caracteres), "destacado" (comienzo EXACTO de la frase, 1 a 8 palabras), "parrafo1" y "parrafo2" (30-240 caracteres cada uno, empiezan con 1 emoji), "hashtags" (4 a 6).
@@ -86,7 +86,11 @@ def con_emoji(parrafo, emoji):
 
 
 def marcar(frase, destacado):
-    return f"**{destacado}**{frase[len(destacado):]}"
+    # Si justo después del destacado hay puntuación (, ; : . etc.), se queda dentro de lo destacado.
+    fin = len(destacado)
+    while fin < len(frase) and frase[fin] in ",;:.¡!¿?":
+        fin += 1
+    return f"**{frase[:fin]}**{frase[fin:]}"
 
 
 def ensamblar(tipo, it, ident, v=None):
