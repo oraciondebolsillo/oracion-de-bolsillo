@@ -2,7 +2,7 @@ name: Generar semana
 
 on:
   schedule:
-    - cron: "0 7 * * 0"   # cada domingo
+    - cron: "0 7 * * *"   # cada día (solo genera si quedan pocas pendientes; si falla, reintenta al día siguiente)
   workflow_dispatch:
     inputs:
       forzar:
