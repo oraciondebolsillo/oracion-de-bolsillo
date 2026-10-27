@@ -734,9 +734,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #fortaleza #dios #versiculo #esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-27T12:26:18Z",
+      "ig_media_id": "17963785152239684",
+      "enlace": "https://www.instagram.com/reel/De_2k7GB4my/"
+    },
     "intentos": 0,
     "texto": "**Todo lo puedo en Cristo** que me fortalece.",
     "referencia": "Filipenses 4:13",
