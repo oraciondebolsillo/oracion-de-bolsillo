@@ -815,9 +815,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #oracion #familia #hogar #dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-28T02:31:10Z",
+      "ig_media_id": "18107816036257741",
+      "enlace": "https://www.instagram.com/reel/DfBXTYRJFDQ/"
+    },
     "intentos": 0,
     "texto": "**Padre,** bendice a los que viven conmigo. Que en casa haya más paciencia que prisa.",
     "referencia": "",
