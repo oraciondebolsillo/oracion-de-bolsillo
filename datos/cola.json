@@ -788,9 +788,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #valentia #dios #confianza #versiculo",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-28T12:29:49Z",
+      "ig_media_id": "18069097889632605",
+      "enlace": "https://www.instagram.com/reel/DfCbx7ap5lf/"
+    },
     "intentos": 0,
     "texto": "**Mira que te mando que te esfuerces y seas valiente;** no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
     "referencia": "Josué 1:9",
