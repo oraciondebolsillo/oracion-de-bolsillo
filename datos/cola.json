@@ -869,9 +869,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #oracion #trabajo #provision #dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-29T02:34:34Z",
+      "ig_media_id": "17887681896688736",
+      "enlace": "https://www.instagram.com/reel/DfD8cfiTkmk/"
+    },
     "intentos": 0,
     "texto": "**Dios proveedor,** tú conoces lo que necesito hoy. Bendice mi trabajo y dame calma.",
     "referencia": "",
