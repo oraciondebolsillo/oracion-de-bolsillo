@@ -860,9 +860,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #gratitud #dios #espera #reflexion",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-29T18:31:18Z",
+      "ig_media_id": "18451219036124400",
+      "enlace": "https://www.instagram.com/reel/DfFp9JUxEEp/"
+    },
     "intentos": 0,
     "texto": "**Dar gracias en medio de la espera** también es una forma de fe.",
     "referencia": "",
