@@ -842,9 +842,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #luz #dios #confianza #salmos",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-29T12:29:58Z",
+      "ig_media_id": "18140386081536865",
+      "enlace": "https://www.instagram.com/reel/DfFAnN5uUVf/"
+    },
     "intentos": 0,
     "texto": "**Jehová es mi luz y mi salvación;** ¿de quién temeré? Jehová es la fortaleza de mi vida; ¿de quién he de atemorizarme?",
     "referencia": "Salmos 27:1",
