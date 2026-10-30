@@ -914,9 +914,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #perdon #paz #dios #reflexion",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-30T18:28:28Z",
+      "ig_media_id": "18092531873225480",
+      "enlace": "https://www.instagram.com/reel/DfIOZ5hhChF/"
+    },
     "intentos": 0,
     "texto": "**Un corazón perdonado** aprende a perdonar sin llevar la cuenta.",
     "referencia": "",
