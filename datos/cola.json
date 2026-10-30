@@ -896,9 +896,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #paz #jesus #esperanza #versiculo",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-30T12:29:31Z",
+      "ig_media_id": "18136653454673419",
+      "enlace": "https://www.instagram.com/reel/DfHlU_vhWUC/"
+    },
     "intentos": 0,
     "texto": "**Estas cosas os he hablado para que en mí tengáis paz.** En el mundo tendréis aflicción; pero confiad, yo he vencido al mundo.",
     "referencia": "Juan 16:33",
