@@ -968,9 +968,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #espera #confianza #dios #reflexion",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-31T18:24:46Z",
+      "ig_media_id": "17916456654470495",
+      "enlace": "https://www.instagram.com/reel/DfKyyH_JbFK/"
+    },
     "intentos": 0,
     "texto": "**A veces Dios responde con silencio** porque está preparando algo que aún no puedes ver.",
     "referencia": "",
