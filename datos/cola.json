@@ -950,9 +950,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #confianza #dios #proposito #versiculo",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-10-31T12:27:19Z",
+      "ig_media_id": "18092031353239085",
+      "enlace": "https://www.instagram.com/reel/DfKJ5C4gCb9/"
+    },
     "intentos": 0,
     "texto": "**Y sabemos que a los que aman a Dios,** todas las cosas les ayudan a bien, esto es, a los que conforme a su propósito son llamados.",
     "referencia": "Romanos 8:28",
