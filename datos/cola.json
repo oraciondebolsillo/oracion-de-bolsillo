@@ -1058,9 +1058,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #refugio #dios #oracion #salmos",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-02T12:45:02Z",
+      "ig_media_id": "17923408254445830",
+      "enlace": "https://www.instagram.com/reel/DfPVfXhyAfK/"
+    },
     "intentos": 0,
     "texto": "**Dios es nuestro amparo y fortaleza,** Nuestro pronto auxilio en las tribulaciones.",
     "referencia": "Salmos 46:1",
