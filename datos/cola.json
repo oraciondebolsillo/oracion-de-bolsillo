@@ -1085,9 +1085,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #oracion #gratitud #gracias #dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-02T02:37:54Z",
+      "ig_media_id": "18093151340666486",
+      "enlace": "https://www.instagram.com/reel/DfOQAcUhn9j/"
+    },
     "intentos": 0,
     "texto": "**Gracias,** Dios mío, por el aire de hoy, por mi gente y por tu cuidado que no se ve.",
     "referencia": "",
