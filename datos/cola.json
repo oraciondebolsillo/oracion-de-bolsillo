@@ -1112,9 +1112,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #esperanza #paz #Dios #confianza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-03T12:45:12Z",
+      "ig_media_id": "18103109591355492",
+      "enlace": "https://www.instagram.com/reel/DfR6VaXpf8-/"
+    },
     "intentos": 0,
     "texto": "**Porque yo sé los pensamientos que tengo acerca de vosotros,** dice Jehová, pensamientos de paz, y no de mal, para daros el fin que esperáis.",
     "referencia": "Jeremías 29:11",
