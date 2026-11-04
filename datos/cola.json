@@ -1193,9 +1193,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #oración #decisiones #Dios #sabiduría",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-04T02:34:08Z",
+      "ig_media_id": "18094078565701877",
+      "enlace": "https://www.instagram.com/reel/DfTZKzNvaGJ/"
+    },
     "intentos": 0,
     "texto": "**Maestro,** esta decisión pesa y no quiero elegir por miedo; enséñame a oír tu paz.",
     "referencia": "",
