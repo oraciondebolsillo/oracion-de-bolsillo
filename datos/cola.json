@@ -1184,9 +1184,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #descanso #paz #Dios #reflexión",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-04T18:41:08Z",
+      "ig_media_id": "18380309191232317",
+      "enlace": "https://www.instagram.com/reel/DfVH1DVtFEJ/"
+    },
     "intentos": 0,
     "texto": "**Descansar no es rendirse;** es confiar en que el mundo no se cae si paras un rato.",
     "referencia": "",
