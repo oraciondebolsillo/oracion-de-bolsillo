@@ -1166,9 +1166,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #descanso #Jesús #esperanza #oración",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-04T12:41:35Z",
+      "ig_media_id": "18089985953283838",
+      "enlace": "https://www.instagram.com/reel/DfUeroyMyZP/"
+    },
     "intentos": 0,
     "texto": "**Venid a mí todos los que estáis trabajados y cargados,** y yo os haré descansar.",
     "referencia": "Mateo 11:28",
