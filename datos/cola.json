@@ -1220,9 +1220,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #confianza #Dios #calma #esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-05T12:47:34Z",
+      "ig_media_id": "17956862529027352",
+      "enlace": "https://www.instagram.com/reel/DfXEKaVsodj/"
+    },
     "intentos": 0,
     "texto": "**Fíate de Jehová de todo tu corazón,** Y no te apoyes en tu propia prudencia.",
     "referencia": "Proverbios 3:5",
