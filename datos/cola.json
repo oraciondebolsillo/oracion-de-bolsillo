@@ -1238,9 +1238,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #esperanza #ánimo #Dios #reflexión",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-05T18:38:21Z",
+      "ig_media_id": "17916959103522319",
+      "enlace": "https://www.instagram.com/reel/DfXsTofCBMD/"
+    },
     "intentos": 0,
     "texto": "**Un día difícil** no define tu vida; solo es una página que se pasa.",
     "referencia": "",
