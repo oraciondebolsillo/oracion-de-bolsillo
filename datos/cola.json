@@ -1292,9 +1292,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #consuelo #Dios #esperanza #oración",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-06T18:37:39Z",
+      "ig_media_id": "18133735366770948",
+      "enlace": "https://www.instagram.com/reel/DfaRBtKx6pN/"
+    },
     "intentos": 0,
     "texto": "**Tus lágrimas no incomodan a Dios;** Él nunca se cansa de escucharte.",
     "referencia": "",
