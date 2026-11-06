@@ -1301,9 +1301,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #oración #esperanza #espera #Dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-06T02:42:37Z",
+      "ig_media_id": "18155259022535829",
+      "enlace": "https://www.instagram.com/reel/DfYjvuvu8sP/"
+    },
     "intentos": 0,
     "texto": "**Dios eterno,** llevo tanto esperando que me cuesta creer; enséñame a esperar contigo.",
     "referencia": "",
