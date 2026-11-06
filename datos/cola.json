@@ -1274,9 +1274,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #gratitud #nuevoDía #Dios #esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-06T12:47:20Z",
+      "ig_media_id": "17973852285192023",
+      "enlace": "https://www.instagram.com/reel/DfZo7mQBp3j/"
+    },
     "intentos": 0,
     "texto": "**Por la misericordia de Jehová no hemos sido consumidos,** porque nunca decayeron sus misericordias. Nuevas son cada mañana; grande es tu fidelidad.",
     "referencia": "Lamentaciones 3:22-23",
