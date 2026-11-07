@@ -1355,9 +1355,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #oración #hijos #familia #Dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-07T02:34:41Z",
+      "ig_media_id": "18164508427496579",
+      "enlace": "https://www.instagram.com/reel/DfbHpJuONx8/"
+    },
     "intentos": 0,
     "texto": "**Señor Jesús,** mis hijos crecen y ya no controlo todo; cuídalos donde yo no llego.",
     "referencia": "",
