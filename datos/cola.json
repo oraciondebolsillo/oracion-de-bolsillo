@@ -1463,9 +1463,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #oración #hogar #paz #familia",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-10-26",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-09T02:41:05Z",
+      "ig_media_id": "18146084782592373",
+      "enlace": "https://www.instagram.com/reel/DfgR79TOPID/"
+    },
     "intentos": 0,
     "texto": "**Dios de paz,** hubo palabras duras hoy en casa; ayúdame a sanar lo que dije y lo que oí.",
     "referencia": "",
