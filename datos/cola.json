@@ -1508,9 +1508,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #Esperanza #UnPasoALaVez #Confianza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-10T18:31:50Z",
+      "ig_media_id": "18113775338127503",
+      "enlace": "https://www.instagram.com/reel/DfkjksKhgMm/"
+    },
     "intentos": 0,
     "texto": "**No tienes que ver todo el camino** para dar el siguiente paso.",
     "referencia": "",
