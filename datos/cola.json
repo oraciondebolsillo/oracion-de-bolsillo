@@ -1490,9 +1490,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #Confianza #Dios #PalabraDeVida #Esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-10T12:45:18Z",
+      "ig_media_id": "18102181919397115",
+      "enlace": "https://www.instagram.com/reel/Dfj74LYBBrq/"
+    },
     "intentos": 0,
     "texto": "**Jehová es mi pastor;** nada me faltará.",
     "referencia": "Salmos 23:1",
