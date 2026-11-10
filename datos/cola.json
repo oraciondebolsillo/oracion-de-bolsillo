@@ -1517,9 +1517,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #OraciónDeLaNoche #Ansiedad #Paz #Dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-10T02:38:32Z",
+      "ig_media_id": "18639234280032391",
+      "enlace": "https://www.instagram.com/reel/Dfi2cNCuaop/"
+    },
     "intentos": 0,
     "texto": "**Dios cercano,** aquieta lo que me da vueltas en la cabeza y déjame descansar en tu paz.",
     "referencia": "",
