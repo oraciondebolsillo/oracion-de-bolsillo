@@ -1562,9 +1562,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #Cansancio #Compañía #Esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-11T18:40:22Z",
+      "ig_media_id": "18644442997014373",
+      "enlace": "https://www.instagram.com/reel/DfnJVn5gu2p/"
+    },
     "intentos": 0,
     "texto": "**Hay cansancios** que no se arreglan durmiendo, sino siendo escuchado.",
     "referencia": "",
