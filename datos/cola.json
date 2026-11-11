@@ -1571,9 +1571,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #Familia #OraciónDeLaNoche #Dios #Amor",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-11T02:35:03Z",
+      "ig_media_id": "18442522225177838",
+      "enlace": "https://www.instagram.com/reel/Dfla31vhENv/"
+    },
     "intentos": 0,
     "texto": "**Padre de todos,** abraza a mi familia que está lejos y acorta la distancia con tu cuidado.",
     "referencia": "",
