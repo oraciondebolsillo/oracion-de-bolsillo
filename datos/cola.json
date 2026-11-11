@@ -1544,9 +1544,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #Paz #Jesús #Oración #Esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-11T12:47:54Z",
+      "ig_media_id": "17949710025074599",
+      "enlace": "https://www.instagram.com/reel/DfmhAKnhmXK/"
+    },
     "intentos": 0,
     "texto": "**La paz os dejo, mi paz os doy;** yo no os la doy como el mundo la da. No se turbe vuestro corazón, ni tenga miedo.",
     "referencia": "Juan 14:27",
