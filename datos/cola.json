@@ -1625,9 +1625,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #Trabajo #OraciónDeLaNoche #Confianza #Dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-12T02:38:20Z",
+      "ig_media_id": "18036941789666983",
+      "enlace": "https://www.instagram.com/reel/DfoAAcxMLpM/"
+    },
     "intentos": 0,
     "texto": "**Jesús carpintero,** bendice mis manos y mi trabajo de hoy, aunque nadie lo vea ni lo aplauda.",
     "referencia": "",
