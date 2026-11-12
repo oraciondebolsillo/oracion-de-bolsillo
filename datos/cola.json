@@ -1598,9 +1598,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #Esperanza #Fortaleza #Dios #Confianza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-12T12:48:48Z",
+      "ig_media_id": "18037431599667535",
+      "enlace": "https://www.instagram.com/reel/DfpF539s-GR/"
+    },
     "intentos": 0,
     "texto": "**Pero los que esperan a Jehová tendrán nuevas fuerzas;** levantarán alas como las águilas; correrán, y no se cansarán; caminarán, y no se fatigarán.",
     "referencia": "Isaías 40:31",
