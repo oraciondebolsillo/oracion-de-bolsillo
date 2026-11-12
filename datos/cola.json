@@ -1616,9 +1616,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #Oración #Silencio #Dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-12T18:40:06Z",
+      "ig_media_id": "18083541830360804",
+      "enlace": "https://www.instagram.com/reel/DfpuEfOBfkr/"
+    },
     "intentos": 0,
     "texto": "**Una taza caliente** y cinco minutos de silencio también pueden ser una oración.",
     "referencia": "",
