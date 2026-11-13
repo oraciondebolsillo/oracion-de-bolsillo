@@ -1670,9 +1670,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #Espera #Confianza #Esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-13T23:00:33Z",
+      "ig_media_id": "18078401945752247",
+      "enlace": "https://www.instagram.com/reel/DfswrHqyvhE/"
+    },
     "intentos": 0,
     "texto": "**La espera pesa menos** cuando dejas de cargarla a solas.",
     "referencia": "",
