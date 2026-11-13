@@ -1679,9 +1679,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #Salud #OraciónDeLaNoche #Consuelo #Dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-13T08:50:36Z",
+      "ig_media_id": "17911903665575390",
+      "enlace": "https://www.instagram.com/reel/DfrPc9lOnDp/"
+    },
     "intentos": 0,
     "texto": "**Dios que cuidas,** quédate con mi cuerpo frágil y con el de quienes amo mientras esperamos.",
     "referencia": "",
