@@ -1724,9 +1724,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #Sinceridad #Oración #Dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-14T21:48:02Z",
+      "ig_media_id": "18136711933674956",
+      "enlace": "https://www.instagram.com/reel/DfvNK6kK2TD/"
+    },
     "intentos": 0,
     "texto": "**Hoy no tienes que ser fuerte;** basta con ser sincero delante de Dios.",
     "referencia": "",
