@@ -1733,9 +1733,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #Cansancio #NoTeRindas #OraciónDeLaNoche #Esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-14T08:11:13Z",
+      "ig_media_id": "17933784177166461",
+      "enlace": "https://www.instagram.com/reel/DftvuzfsvTl/"
+    },
     "intentos": 0,
     "texto": "**Dios paciente,** no te pido que quites el peso hoy, solo que te sientes conmigo en el escalón.",
     "referencia": "",
