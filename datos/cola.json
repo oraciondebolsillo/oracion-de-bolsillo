@@ -1706,9 +1706,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #SinMiedo #Dios #Confianza #Valentía",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-14T17:28:44Z",
+      "ig_media_id": "18035102408906800",
+      "enlace": "https://www.instagram.com/reel/Dfuvfolh0sk/"
+    },
     "intentos": 0,
     "texto": "**No temas, porque yo estoy contigo;** no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré, siempre te sustentaré con la diestra de mi justicia.",
     "referencia": "Isaías 41:10",
