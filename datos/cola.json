@@ -1787,9 +1787,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #Perdón #OraciónDeLaNoche #Paz #Dios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-15T08:30:31Z",
+      "ig_media_id": "17899103067681078",
+      "enlace": "https://www.instagram.com/reel/DfwWsi8B7Ow/"
+    },
     "intentos": 0,
     "texto": "**Dios de misericordia,** ablanda lo que se endureció en mí y ayúdame a dar y recibir perdón.",
     "referencia": "",
