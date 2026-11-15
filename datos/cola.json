@@ -1778,9 +1778,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #Comunidad #Humildad #Esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-15T22:16:37Z",
+      "ig_media_id": "18121847920972214",
+      "enlace": "https://www.instagram.com/reel/Dfx1Oy7B9zG/"
+    },
     "intentos": 0,
     "texto": "**Pedir ayuda** no te hace débil; te recuerda que no fuiste hecho para ir solo.",
     "referencia": "",
