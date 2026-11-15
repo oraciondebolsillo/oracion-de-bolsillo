@@ -1760,9 +1760,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #Luz #Dios #Esperanza #Oración",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-15T18:11:04Z",
+      "ig_media_id": "18032892755906943",
+      "enlace": "https://www.instagram.com/reel/DfxZK8FhtHJ/"
+    },
     "intentos": 0,
     "texto": "**Jehová es mi luz y mi salvación;** ¿de quién temeré? Jehová es la fortaleza de mi vida; ¿de quién he de atemorizarme?",
     "referencia": "Salmos 27:1",
