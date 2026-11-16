@@ -1814,9 +1814,13 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#fe #Gracia #Humildad #Dios #Esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-16T21:26:06Z",
+      "ig_media_id": "18130552684803671",
+      "enlace": "https://www.instagram.com/reel/Df0UP56NOAd/"
+    },
     "intentos": 0,
     "texto": "**Y me ha dicho: Bástate mi gracia;** porque mi poder se perfecciona en la debilidad.",
     "referencia": "2 Corintios 12:9",
