@@ -1841,9 +1841,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #Gratitud #OraciónDeLaNoche #Dios #GraciasDios",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-16T08:42:08Z",
+      "ig_media_id": "17934393648162669",
+      "enlace": "https://www.instagram.com/reel/Dfy80jjzYf9/"
+    },
     "intentos": 0,
     "texto": "**Dios generoso,** gracias por el café caliente, por un mensaje a tiempo y por llegar a casa.",
     "referencia": "",
