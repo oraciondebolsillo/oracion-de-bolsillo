@@ -2,10 +2,12 @@ name: Publicar
 
 on:
   schedule:
-    # Diez piezas por semana. UTC fijo: Bogotá UTC-5, Ciudad de México UTC-6.
-    - cron: "17 12 * * 2"   # martes: 07:17 Bogotá / 06:17 México
-    - cron: "17 23 * * 4,6" # jueves y sábado: 18:17 Bogotá / 17:17 México
-    - cron: "17 2 * * *"    # cada noche: 21:17 Bogotá / 20:17 México del día anterior
+    # Cinco piezas diarias. UTC fijo: Bogotá UTC-5, Ciudad de México UTC-6.
+    - cron: "17 12 * * *"   # versículo: 07:17 Bogotá / 06:17 México
+    - cron: "17 16 * * *"   # reflexión: 11:17 Bogotá / 10:17 México
+    - cron: "17 20 * * *"   # reflexión: 15:17 Bogotá / 14:17 México
+    - cron: "17 23 * * *"   # oración: 18:17 Bogotá / 17:17 México
+    - cron: "17 2 * * *"    # oración: 21:17 Bogotá / 20:17 México del día anterior
   workflow_dispatch:
     inputs:
       turno:
@@ -53,8 +55,9 @@ jobs:
             T="$ELEGIDO"
           else
             case "$PROGRAMA" in
-              "17 12 * * 2") T=manana ;;
-              "17 23 * * 4,6") T=tarde ;;
+              "17 12 * * *") T=manana ;;
+              "17 16 * * *"|"17 20 * * *") T=tarde ;;
+              "17 23 * * *") T=noche ;;
               "17 2 * * *") T=noche ;;
               *) echo "::error::Programación desconocida: $PROGRAMA"; exit 1 ;;
             esac
