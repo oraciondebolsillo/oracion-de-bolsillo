@@ -2,8 +2,8 @@
 
 Una vez configurado, el sistema hace solo todo esto:
 
-- **Cada día** comprueba reservas por tipo y repone hasta dos semanas de contenido, sin acumular versículos cuando faltan oraciones.
-- **Diez veces por semana** prepara y publica reels narrados de 720 × 1280, con texto sincronizado y portada propia. Una oración cada noche, dos reflexiones y un versículo semanales.
+- **Cada día** comprueba reservas por tipo y repone una semana de contenido, sin acumular versículos cuando faltan oraciones.
+- **Cinco veces al día** prepara y publica reels narrados de 720 × 1280, con texto sincronizado y portada propia. Dos oraciones, dos reflexiones y un versículo diarios.
 - **Cada 15 días** renueva el permiso de Instagram (el token dura 60 días).
 
 Tú solo tienes que hacer esta configuración **una vez** (≈ 1 hora). Después, revisar de vez en cuando.
@@ -76,8 +76,10 @@ Repositorio → **Settings → Secrets and variables → Actions → New reposit
 
 ## Formato y calendario actual
 
-- Martes, 12:17 UTC: versículo. 07:17 Bogotá y 06:17 Ciudad de México.
-- Jueves y sábado, 23:17 UTC: reflexión. 18:17 Bogotá y 17:17 Ciudad de México.
+- Diario, 12:17 UTC: versículo. 07:17 Bogotá y 06:17 Ciudad de México.
+- Diario, 16:17 UTC: reflexión. 11:17 Bogotá y 10:17 Ciudad de México.
+- Diario, 20:17 UTC: reflexión. 15:17 Bogotá y 14:17 Ciudad de México.
+- Diario, 23:17 UTC: oración. 18:17 Bogotá y 17:17 Ciudad de México.
 - Diario, 02:17 UTC: oración. 21:17 Bogotá y 20:17 Ciudad de México del día anterior.
 - Son horas de inicio de GitHub Actions. La preparación y las colas pueden retrasar la publicación.
 - Voz Dalia (es-MX), velocidad +4%. Edge TTS recibe el guion y devuelve audio y tiempos de cada palabra. Requiere conexión. Si la voz falla, se detiene esa ejecución y la pieza sigue pendiente.
