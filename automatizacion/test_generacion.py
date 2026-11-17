@@ -46,6 +46,8 @@ class GeneracionTests(unittest.TestCase):
         with patch.object(generar, "config", return_value=self.cfg), \
              patch.object(generar, "cargar", side_effect=self.leer), \
              patch.object(generar, "llamar_claude", return_value='{"oraciones": "incorrecto"}'), \
+             patch.object(generar, "error"), \
+             patch.object(generar, "aviso"), \
              patch.object(generar, "guardar") as guardar:
             self.assertEqual(generar.generar(intentos_max=1), 1)
             guardar.assert_not_called()
