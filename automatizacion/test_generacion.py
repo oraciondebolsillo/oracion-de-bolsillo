@@ -24,6 +24,7 @@ class GeneracionTests(unittest.TestCase):
                                             (5, "oracion", "noche"))]
         self.cfg = config()
         self.cfg["publicaciones_por_semana"] = {"versiculos": 1, "reflexiones": 1, "oraciones": 1}
+        self.cfg["semanas_reserva"] = 2
 
     def leer(self, nombre):
         return copy.deepcopy(self.cola if nombre == "cola.json" else self.banco)

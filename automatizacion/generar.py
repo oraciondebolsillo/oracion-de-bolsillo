@@ -33,6 +33,7 @@ Escribes para reels narrados. La primera frase debe reconocer una situación con
 Cada pieza incluye "gancho" (20-90 caracteres, se pronuncia al principio, sin emoji) y "portada" (10-45 caracteres, de 3 a 7 palabras, sin emoji). No repitas el gancho en el cuerpo.
 Las reflexiones incluyen "narracion" (180-380 caracteres) con una situación, una idea que la desarrolle y un cierre cálido. La frase de portada no sustituye el desarrollo.
 Hashtags: de 4 a 5 en minúscula, prioriza #dios #jesus #amen y una etiqueta relacionada con el mensaje. El sistema decide la prueba de #fyp. No afirmes que una etiqueta garantiza visitas.
+Cada pieza incluye "cta" (20-120 caracteres): una única invitación concreta y ligada al tema. Por ejemplo, enviar la oración a quien está cuidando a un familiar, compartir la reflexión con alguien que empieza de nuevo o guardar el versículo para un momento difícil. Varía la acción y el destinatario; evita pedir tres acciones o exigir comentarios de Amén.
 Respondes SIEMPRE con un único objeto JSON válido, sin texto antes ni después."""
 
 
@@ -74,6 +75,7 @@ def llamar_claude(prompt, cfg):
         "oraciones": ("tema", "frase", "destacado", "gancho", "portada", "oracion", "parrafo1"),
     }.items():
         propiedades = {campo: {"type": "string"} for campo in campos}
+        propiedades["cta"] = {"type": "string"}
         propiedades["hashtags"] = {"type": "array", "items": {"type": "string"}}
         esquemas[tipo] = {"type": "array", "items": {"type": "object", "properties": propiedades,
                             "required": list(propiedades), "additionalProperties": False}}
@@ -124,7 +126,7 @@ def marcar(frase, destacado):
 
 def ensamblar(tipo, it, ident, v=None):
     """Convierte lo que devuelve la IA en una publicación completa de la cola."""
-    cta = CTA[tipo][(ident // 3) % 3]
+    cta = it.get("cta") or CTA[tipo][(ident // 3) % 3]
     base = {"id": ident, "turno": {"versiculo": "manana", "reflexion": "tarde", "oracion": "noche"}[tipo], "tipo": tipo,
             "hashtags": " ".join(it["hashtags"]), "estado": "pendiente", "creado": hoy(), "publicado": None, "intentos": 0}
     for campo in ("gancho", "portada", "narracion"):
@@ -161,10 +163,11 @@ def generar(forzar=False, intentos_max=4):
     pendientes = [c for c in cola if c.get("estado") == "pendiente"]
     objetivos = cfg.get("publicaciones_por_semana", {"versiculos": 7, "reflexiones": 7, "oraciones": 7})
     tipos = {"versiculos": "versiculo", "reflexiones": "reflexion", "oraciones": "oracion"}
-    necesarios = {k: n if forzar else max(0, n * 2 - sum(c["tipo"] == tipos[k] for c in pendientes))
+    semanas = max(1, int(cfg.get("semanas_reserva", 2)))
+    necesarios = {k: n if forzar else max(0, n * semanas - sum(c["tipo"] == tipos[k] for c in pendientes))
                   for k, n in objetivos.items()}
     if not any(necesarios.values()):
-        print("Hay al menos dos semanas de contenido pendiente por cada tipo.")
+        print(f"Hay al menos {semanas} semana(s) de contenido pendiente por cada tipo.")
         return 0
 
     candidatos = candidatos_versiculos(cola, banco, cuantos=max(12, necesarios["versiculos"]))

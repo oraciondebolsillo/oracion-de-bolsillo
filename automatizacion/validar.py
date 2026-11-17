@@ -91,6 +91,8 @@ def revisar_guion(it, con_narracion=False):
     campos = [("gancho", 20, 90), ("portada", 10, 45)]
     if con_narracion:
         campos.append(("narracion", 180, 380))
+    if "cta" in it:
+        campos.append(("cta", 20, 120))
     for nombre, minimo, maximo in campos:
         problemas += revisar_longitud(nombre, it.get(nombre), minimo, maximo)
         problemas += revisar_texto_libre({nombre: it.get(nombre)})

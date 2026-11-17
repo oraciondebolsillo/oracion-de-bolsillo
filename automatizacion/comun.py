@@ -21,7 +21,8 @@ CONFIG_POR_DEFECTO = {
     "duracion_maxima": 90,
     "hashtags_base": ["#dios", "#jesus", "#amen"],
     "hashtag_descubrimiento": "#fyp",
-    "publicaciones_por_semana": {"versiculos": 1, "reflexiones": 2, "oraciones": 7},
+    "publicaciones_por_semana": {"versiculos": 7, "reflexiones": 14, "oraciones": 14},
+    "semanas_reserva": 1,
     "aprobar_automaticamente": True,  # False: lo nuevo queda como "borrador" hasta que lo apruebes
     "hashtags_max": 5,
     "modelo": "claude-sonnet-5-5",
