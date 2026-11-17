@@ -67,16 +67,41 @@ def llamar_claude(prompt, cfg):
     if not clave:
         raise SystemExit("Falta el secreto ANTHROPIC_API_KEY")
     base = os.environ.get("ANTHROPIC_BASE_URL", "https://api.anthropic.com")
+    esquemas = {}
+    for tipo, campos in {
+        "versiculos": ("id", "destacado", "gancho", "portada", "parrafo1", "parrafo2"),
+        "reflexiones": ("frase", "destacado", "gancho", "portada", "narracion", "parrafo1", "parrafo2"),
+        "oraciones": ("tema", "frase", "destacado", "gancho", "portada", "oracion", "parrafo1"),
+    }.items():
+        propiedades = {campo: {"type": "string"} for campo in campos}
+        propiedades["hashtags"] = {"type": "array", "items": {"type": "string"}}
+        esquemas[tipo] = {"type": "array", "items": {"type": "object", "properties": propiedades,
+                            "required": list(propiedades), "additionalProperties": False}}
+    peticion = {
+        "model": cfg["modelo"], "max_tokens": 12000, "system": SISTEMA,
+        "messages": [{"role": "user", "content": prompt}],
+        "output_config": {"format": {"type": "json_schema", "schema": {
+            "type": "object", "properties": esquemas, "required": list(esquemas), "additionalProperties": False}}},
+    }
+    if cfg["modelo"].startswith("claude-sonnet-5-5"):
+        # Sonnet 5.5 razona por defecto. Sin herramientas, between_tools deja todo el presupuesto al JSON.
+        peticion["thinking"] = {"type": "between_tools"}
+        peticion["output_config"]["effort"] = "low"
     r = requests.post(
         f"{base}/v1/messages",
         headers={"x-api-key": clave, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-        json={"model": cfg["modelo"], "max_tokens": 16000, "system": SISTEMA, "messages": [{"role": "user", "content": prompt}]},
+        json=peticion,
         timeout=300,
     )
     if r.status_code != 200:
         raise RuntimeError(f"La API de Claude respondió {r.status_code}: {r.text[:400]}")
     datos = r.json()
-    return "".join(b.get("text", "") for b in datos.get("content", []) if b.get("type") == "text")
+    if datos.get("stop_reason") == "max_tokens":
+        raise ValueError("La respuesta de Claude quedó truncada por el límite de tokens")
+    texto = "".join(b.get("text", "") for b in datos.get("content", []) if b.get("type") == "text")
+    if not texto.strip():
+        raise ValueError("Claude no devolvió un bloque de texto con el JSON")
+    return texto
 
 
 def extraer_json(texto):
@@ -151,14 +176,17 @@ def generar(forzar=False, intentos_max=4):
 
     buenos = {"versiculos": [], "reflexiones": [], "oraciones": []}
     usados_ids = set()
-    for intento in range(1, intentos_max + 1):
-        faltan = {k: necesarios[k] - len(v) for k, v in buenos.items()}
+    rondas_necesarias = (max(necesarios.values()) + 2) // 3
+    for intento in range(1, rondas_necesarias + intentos_max):
+        faltan = {k: min(3, necesarios[k] - len(v)) for k, v in buenos.items()}
         if not any(faltan.values()):
             break
         libres = {i: v for i, v in candidatos.items() if i not in usados_ids}
         print(f"Intento {intento}: pido {faltan}")
         try:
-            datos = extraer_json(llamar_claude(construir_prompt(faltan, libres, temas[len(buenos['oraciones']):], previos), cfg))
+            inicio_temas = len(buenos["oraciones"])
+            temas_lote = temas[inicio_temas:inicio_temas + faltan["oraciones"]]
+            datos = extraer_json(llamar_claude(construir_prompt(faltan, libres, temas_lote, previos), cfg))
             if not isinstance(datos, dict):
                 raise ValueError("La respuesta debe ser un objeto JSON")
             for clave in buenos:

@@ -1,7 +1,7 @@
 import copy
 import json
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 from automatizacion import generar
 from automatizacion.comun import cargar, config
@@ -51,6 +51,26 @@ class GeneracionTests(unittest.TestCase):
              patch.object(generar, "guardar") as guardar:
             self.assertEqual(generar.generar(intentos_max=1), 1)
             guardar.assert_not_called()
+
+    def test_api_solicita_json_estructurado_sin_razonamiento_previo(self):
+        respuesta = Mock(status_code=200)
+        respuesta.json.return_value = {"stop_reason": "end_turn", "content": [{"type": "text", "text": "{}"}]}
+        with patch.dict("os.environ", {"ANTHROPIC_API_KEY": "clave-prueba"}), \
+             patch.object(generar.requests, "post", return_value=respuesta) as post:
+            self.assertEqual(generar.llamar_claude("Guiones de prueba", self.cfg), "{}")
+            peticion = post.call_args.kwargs["json"]
+            self.assertEqual(peticion["thinking"], {"type": "between_tools"})
+            self.assertEqual(peticion["output_config"]["effort"], "low")
+            self.assertEqual(peticion["output_config"]["format"]["type"], "json_schema")
+
+    def test_respuesta_vacia_o_truncada_se_rechaza_explicando_el_motivo(self):
+        for datos in ({"stop_reason": "max_tokens", "content": []}, {"stop_reason": "end_turn", "content": []}):
+            respuesta = Mock(status_code=200)
+            respuesta.json.return_value = datos
+            with patch.dict("os.environ", {"ANTHROPIC_API_KEY": "clave-prueba"}), \
+                 patch.object(generar.requests, "post", return_value=respuesta):
+                with self.assertRaises(ValueError):
+                    generar.llamar_claude("Guiones de prueba", self.cfg)
 
 
 if __name__ == "__main__":
