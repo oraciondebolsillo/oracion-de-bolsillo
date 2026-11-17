@@ -13,7 +13,7 @@ from pathlib import Path
 
 import requests
 
-from . import musica, validar
+from . import editorial, musica, validar
 from .comun import RAIZ, aviso, cargar, config, error, guardar, ahora, salida_github
 
 TURNOS = ("manana", "tarde", "noche")
@@ -39,9 +39,11 @@ def siguiente(cola, turno):
 
 
 def caption(item, cfg):
-    tags = item["hashtags"].split()[: cfg["hashtags_max"]]
+    tags = editorial.hashtags(item, cfg)
     cierre = (cfg.get("cierre_descripcion") or {}).get(item.get("tipo"), "").strip()
-    cuerpo = f'{item["descripcion"]}\n\n{cierre}' if cierre else item["descripcion"]
+    cuerpo = re.sub(r"\n\s*\n(?:Si esta oración|Si la haces|Si la sientes)[^\n]*", "", item["descripcion"])
+    cuerpo = f'{cuerpo.strip()}\n{cierre}' if cierre else cuerpo.strip()
+    cuerpo = re.sub(r"\n[ \t]*\n(?:[ \t]*\n)+", "\n\n", cuerpo)
     texto = f'{cuerpo}\n\n{" ".join(tags)}'
     if len(texto) > 2200:
         raise ErrorIG(f"La descripción de la publicación {item['id']} supera los 2200 caracteres de Instagram")
@@ -61,6 +63,7 @@ def preparar(turno, salida):
     if not item:
         error(f"No quedan publicaciones pendientes para el turno '{turno}'. Revisa que funcione el workflow 'Generar semana'.")
         return 1
+    caption(item, cfg)  # Validar el texto antes de sintetizar o desplegar archivos.
     quedan = len(pendientes_turno(cola, turno))
     if quedan <= cfg["minimo_aviso_por_turno"]:
         aviso(f"Quedan solo {quedan} publicaciones para el turno '{turno}'.")
@@ -75,10 +78,14 @@ def preparar(turno, salida):
             error("No encuentro ffmpeg")
             return 1
         audio = None
-        with tempfile.TemporaryDirectory() as tmp:
+        with tempfile.TemporaryDirectory(dir=salida) as tmp:
             if cfg["con_musica"]:
                 audio = musica.audio_para(item["id"], tmp, RAIZ / "musica")
-            hacer_reel(componer(pub, ALTO_REEL), destino, exe, audio)
+            if cfg.get("con_voz", False):
+                from .reel import crear
+                crear(item, destino, exe, audio, cfg, tmp)
+            else:
+                hacer_reel(componer(pub, ALTO_REEL), destino, exe, audio)
     else:
         componer(pub, ALTO_POST).save(destino, quality=95)
     if not destino.exists() or destino.stat().st_size < 20_000:
@@ -129,18 +136,19 @@ def esperar_url(url):
 def ya_publicado(uid, token, texto):
     """Seguro anti-duplicados: ¿ya hay una publicación reciente con esta misma descripción?"""
     try:
-        datos = api("GET", f"{uid}/media", token, params={"fields": "caption,timestamp", "limit": 12})
+        datos = api("GET", f"{uid}/media", token, params={"fields": "id,caption,timestamp", "limit": 50})
     except ErrorIG as e:
-        aviso(f"No pude comprobar duplicados: {e}")
-        return False
-    clave = validar.norm(texto)[:80]
-    return any(validar.norm(m.get("caption") or "")[:80] == clave for m in datos.get("data", []))
+        raise ErrorIG(f"No pude comprobar duplicados, se aplaza la publicación: {e}") from e
+    clave = validar.norm(texto)
+    return next((m["id"] for m in datos.get("data", []) if validar.norm(m.get("caption") or "") == clave), None)
 
 
 def publicar_en_instagram(uid, token, item, url, cfg):
     cuerpo = {"caption": caption(item, cfg)}
     if cfg["publicar_como"] == "reel":
         cuerpo.update(media_type="REELS", video_url=url, share_to_feed=bool(cfg["compartir_en_feed"]))
+        if cfg.get("con_voz", False):
+            cuerpo["cover_url"] = url.rsplit(".", 1)[0] + ".jpg"
     else:
         cuerpo.update(image_url=url)
     cid = api("POST", f"{uid}/media", token, json=cuerpo)["id"]
@@ -160,7 +168,7 @@ def publicar_en_instagram(uid, token, item, url, cfg):
     return api("POST", f"{uid}/media_publish", token, json={"creation_id": cid})["id"]
 
 
-def publicar(turno, url_base, simulacro):
+def publicar(turno, url_base, simulacro, id_preparado=None):
     cfg, cola = config(), cargar("cola.json")
     token = os.environ.get("IG_TOKEN")
     if not token:
@@ -169,21 +177,26 @@ def publicar(turno, url_base, simulacro):
     me = api("GET", "me", token, params={"fields": "user_id,username"})
     uid = me.get("user_id") or me.get("id")
     print(f"Conectado a Instagram como @{me.get('username')} (id {uid})")
+    if (me.get("username") or "").lower() != cfg["cuenta"].lstrip("@").lower():
+        raise ErrorIG("El token pertenece a una cuenta distinta a la configurada")
 
     item = siguiente(cola, turno)
     if not item:
         error(f"No quedan publicaciones pendientes para el turno '{turno}'")
         return 1
+    if id_preparado is not None and item["id"] != id_preparado:
+        raise ErrorIG("La cola ha cambiado desde la preparación. Se cancela para evitar publicar el vídeo equivocado")
     url = f"{url_base.rstrip('/')}/{nombre_archivo(item, cfg)}"
+    texto = caption(item, cfg)
     esperar_url(url)
     if simulacro:
         print(f"SIMULACRO correcto: la conexión funciona y se publicaría la nº {item['id']} ({item['tipo']}). No se ha publicado nada.")
         return 0
 
-    texto = caption(item, cfg)
-    if ya_publicado(uid, token, texto):
+    duplicado = ya_publicado(uid, token, texto)
+    if duplicado:
         aviso(f"La publicación {item['id']} ya estaba en Instagram; la marco como publicada sin repetirla.")
-        item.update(estado="publicado", publicado={"fecha": ahora(), "ig_media_id": None, "nota": "ya existía"})
+        item.update(estado="publicado", publicado={"fecha": ahora(), "ig_media_id": duplicado, "nota": "ya existía"})
         guardar("cola.json", cola)
         return 0
     try:
@@ -198,6 +211,8 @@ def publicar(turno, url_base, simulacro):
         error(str(e))
         return 1
     item.update(estado="publicado", publicado={"fecha": ahora(), "ig_media_id": media_id})
+    item["hashtags"] = " ".join(editorial.hashtags(item, cfg))
+    item["publicado"]["formato"] = "narrado_720p" if cfg.get("con_voz") and cfg["publicar_como"] == "reel" else cfg["publicar_como"]
     item.pop("ultimo_error", None)
     guardar("cola.json", cola)  # se guarda ya, antes de cualquier otra cosa
     try:
@@ -219,7 +234,8 @@ if __name__ == "__main__":
     b.add_argument("--turno", required=True, choices=TURNOS)
     b.add_argument("--url-base", required=True)
     b.add_argument("--simulacro", action="store_true")
+    b.add_argument("--id-preparado", type=int)
     args = ap.parse_args()
     if args.cmd == "preparar":
         sys.exit(preparar(args.turno, args.salida))
-    sys.exit(publicar(args.turno, args.url_base, args.simulacro))
+    sys.exit(publicar(args.turno, args.url_base, args.simulacro, args.id_preparado))

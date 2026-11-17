@@ -2,13 +2,13 @@
 
 Una vez configurado, el sistema hace solo todo esto:
 
-- **Cada domingo** pide a Claude la semana siguiente (21 publicaciones: mañana = versículo, tarde = reflexión, noche = oración).
-- **3 veces al día** crea la imagen/reel, la sube a una web pública gratuita (GitHub Pages) y la publica en Instagram.
+- **Cada día** comprueba reservas por tipo y repone hasta dos semanas de contenido, sin acumular versículos cuando faltan oraciones.
+- **Diez veces por semana** prepara y publica reels narrados de 720 × 1280, con texto sincronizado y portada propia. Una oración cada noche, dos reflexiones y un versículo semanales.
 - **Cada 15 días** renueva el permiso de Instagram (el token dura 60 días).
 
 Tú solo tienes que hacer esta configuración **una vez** (≈ 1 hora). Después, revisar de vez en cuando.
 
-> Importante: el sistema se ha probado con servidores simulados (52 comprobaciones correctas), **no contra los servicios reales**. Es normal que el primer día haya que retocar algún detalle (sobre todo los menús de Meta, que cambian de nombre). El paso 7 (simulacro) está pensado para detectarlo sin publicar nada.
+> La actualización incluye diez pruebas de regresión y muestras de los tres formatos generadas con Edge TTS. La publicación con la nueva portada debe verificarse en el primer despliegue de GitHub Actions. El simulacro del paso 7 comprueba la conexión y la disponibilidad del archivo sin publicar.
 
 ---
 
@@ -74,15 +74,20 @@ Repositorio → **Settings → Secrets and variables → Actions → New reposit
 3. **Actions → Generar semana → Run workflow** para comprobar que Claude genera contenido nuevo (solo genera si quedan menos de 22 pendientes; marca *forzar* para obligarlo).
 4. A partir de aquí el calendario va solo.
 
-## Horarios (hora UTC → Colombia / España)
+## Formato y calendario actual
 
-| Turno | UTC | Colombia | España (invierno / verano) |
-|---|---|---|---|
-| Mañana | 12:00 | 7:00 | 13:00 / 14:00 |
-| Tarde | 18:00 | 13:00 | 19:00 / 20:00 |
-| Noche | 02:00 | 21:00 | 03:00 / 04:00 |
+- Martes, 12:17 UTC: versículo. 07:17 Bogotá y 06:17 Ciudad de México.
+- Jueves y sábado, 23:17 UTC: reflexión. 18:17 Bogotá y 17:17 Ciudad de México.
+- Diario, 02:17 UTC: oración. 21:17 Bogotá y 20:17 Ciudad de México del día anterior.
+- Son horas de inicio de GitHub Actions. La preparación y las colas pueden retrasar la publicación.
+- Voz Dalia (es-MX), velocidad +4%. Edge TTS recibe el guion y devuelve audio y tiempos de cada palabra. Requiere conexión. Si la voz falla, se detiene esa ejecución y la pieza sigue pendiente.
+- La oración completa se escucha en el vídeo. El texto cambia siguiendo el audio, con música baja y cierre para seguir la cuenta. No se genera animación de personajes.
+- `datos/config.json` controla la voz, el límite de duración y los hashtags. `con_voz: false` recupera el formato anterior.
+- Hashtags amplios en minúscula, máximo cinco. #fyp se alterna por id con #oracion para comparar resultados, sin asumir que garantice alcance. Se guardan los hashtags usados y el formato en el historial de publicación.
+- El sistema conserva el contenido publicado. Las piezas antiguas pendientes también usan la voz y el nuevo diseño.
+- Prueba local sin publicar: `python -m automatizacion.publicar preparar --turno noche --salida sitio`.
+- Regresiones: `python -m unittest discover -s automatizacion -p 'test_*.py' -v`.
 
-Se cambian en `.github/workflows/publicar.yml` (líneas `cron`). GitHub puede retrasar unos minutos las ejecuciones.
 
 ## Mantenimiento
 
