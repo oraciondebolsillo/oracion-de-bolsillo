@@ -2,10 +2,10 @@ name: Publicar
 
 on:
   schedule:
-    # Horas en UTC (no cambian con el horario de verano). En Colombia/México: 7:00, 13:00 y 21:00.
-    - cron: "0 12 * * *"   # turno de mañana  -> versículo
-    - cron: "0 18 * * *"   # turno de tarde   -> reflexión
-    - cron: "0 2 * * *"    # turno de noche   -> oración
+    # Diez piezas por semana. UTC fijo: Bogotá UTC-5, Ciudad de México UTC-6.
+    - cron: "17 12 * * 2"   # martes: 07:17 Bogotá / 06:17 México
+    - cron: "17 23 * * 4,6" # jueves y sábado: 18:17 Bogotá / 17:17 México
+    - cron: "17 2 * * *"    # cada noche: 21:17 Bogotá / 20:17 México del día anterior
   workflow_dispatch:
     inputs:
       turno:
@@ -32,6 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       turno: ${{ steps.turno.outputs.turno }}
+      id: ${{ steps.render.outputs.id }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -39,6 +40,8 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Comprobar generación y protección de publicaciones
+        run: python -m unittest discover -s automatizacion -p 'test_*.py' -v
       - id: turno
         name: Elegir turno
         env:
@@ -50,14 +53,15 @@ jobs:
             T="$ELEGIDO"
           else
             case "$PROGRAMA" in
-              "0 12 * * *") T=manana ;;
-              "0 18 * * *") T=tarde ;;
-              "0 2 * * *")  T=noche ;;
+              "17 12 * * 2") T=manana ;;
+              "17 23 * * 4,6") T=tarde ;;
+              "17 2 * * *") T=noche ;;
               *) echo "::error::Programación desconocida: $PROGRAMA"; exit 1 ;;
             esac
           fi
           echo "turno=$T" >> "$GITHUB_OUTPUT"
-      - name: Crear la imagen o el vídeo
+      - id: render
+        name: Crear la imagen o el vídeo
         run: python -m automatizacion.publicar preparar --turno "${{ steps.turno.outputs.turno }}" --salida sitio
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -95,6 +99,7 @@ jobs:
           if [ "$EVENTO" = "workflow_dispatch" ] && [ "$SIMULACRO" = "true" ]; then EXTRA="--simulacro"; fi
           python -m automatizacion.publicar publicar \
             --turno "${{ needs.preparar.outputs.turno }}" \
+            --id-preparado "${{ needs.preparar.outputs.id }}" \
             --url-base "${{ needs.desplegar.outputs.page_url }}" $EXTRA
       - name: Guardar el estado de la cola
         if: always()
