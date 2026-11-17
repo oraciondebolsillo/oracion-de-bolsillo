@@ -2,3 +2,4 @@ pillow
 numpy
 imageio-ffmpeg
 requests
+edge-tts>=7.2,<8
