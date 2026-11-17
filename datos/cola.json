@@ -1832,9 +1832,13 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#fe #Compañía #Dios #Esperanza",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-03",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-17T01:16:35Z",
+      "ig_media_id": "17882070867631235",
+      "enlace": "https://www.instagram.com/reel/Df0un6qNc0S/"
+    },
     "intentos": 0,
     "texto": "**A veces la respuesta** llega como alguien que se sienta a tu lado en silencio.",
     "referencia": "",
