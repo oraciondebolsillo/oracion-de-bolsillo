@@ -80,10 +80,21 @@ def revisar_destacado(frase, destacado, max_palabras=12):
 
 
 def revisar_hashtags(h):
-    if not isinstance(h, list) or not (4 <= len(h) <= 7):
-        return ["hashtags: deben ser entre 4 y 7"]
+    if not isinstance(h, list) or not (4 <= len(h) <= 5):
+        return ["hashtags: deben ser entre 4 y 5"]
     malos = [x for x in h if not isinstance(x, str) or not RE_HASHTAG.match(x)]
     return [f"hashtags: formato incorrecto {malos}"] if malos else []
+
+
+def revisar_guion(it, con_narracion=False):
+    problemas = []
+    campos = [("gancho", 20, 90), ("portada", 10, 45)]
+    if con_narracion:
+        campos.append(("narracion", 180, 380))
+    for nombre, minimo, maximo in campos:
+        problemas += revisar_longitud(nombre, it.get(nombre), minimo, maximo)
+        problemas += revisar_texto_libre({nombre: it.get(nombre)})
+    return problemas
 
 
 def revisar_longitud(nombre, t, minimo, maximo):
@@ -107,7 +118,7 @@ def es_repetido(texto, previos):
 # ---------- una validación por tipo de publicación ----------
 def validar_versiculo(it, candidatos):
     """candidatos: dict id -> {'ref','texto'}. Devuelve (problemas, versiculo_o_None)."""
-    p = []
+    p = revisar_guion(it)
     v = candidatos.get(it.get("id"))
     if not v:
         return [f"id de versículo no permitido: {it.get('id')}"], None
@@ -120,7 +131,7 @@ def validar_versiculo(it, candidatos):
 
 
 def validar_reflexion(it):
-    p = []
+    p = revisar_guion(it, con_narracion=True)
     p += revisar_longitud("frase", it.get("frase"), 30, 140)
     p += revisar_texto_libre({"frase": it.get("frase"), "parrafo1": it.get("parrafo1"), "parrafo2": it.get("parrafo2")})
     if isinstance(it.get("frase"), str):
@@ -132,7 +143,7 @@ def validar_reflexion(it):
 
 
 def validar_oracion(it):
-    p = []
+    p = revisar_guion(it)
     p += revisar_longitud("frase", it.get("frase"), 40, 125)
     p += revisar_longitud("oracion", it.get("oracion"), 350, 900)
     p += revisar_longitud("parrafo1", it.get("parrafo1"), 30, 240)

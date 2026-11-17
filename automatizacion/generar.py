@@ -1,4 +1,4 @@
-"""Escribe la semana siguiente (21 publicaciones) con la API de Claude y la añade a la cola.
+"""Repone las reservas por tipo con la API de Claude y las añade a la cola.
 
 Reglas de oro:
   * El texto de los versículos lo copia el código desde datos/banco_versiculos.json (nunca la IA).
@@ -12,13 +12,13 @@ import sys
 
 import requests
 
-from . import validar
+from . import editorial, validar
 from .comun import aviso, cargar, config, error, guardar, hoy
 
 CTA = {
     "versiculo": ["📖 Guárdalo para leerlo cuando más lo necesites.", "📖 Guarda este versículo y vuelve a él cuando dudes.", "📖 Guárdalo y compártelo con alguien que lo necesite."],
     "reflexion": ["💬 Compártelo con alguien que lo necesite hoy.", "💬 Envíaselo a alguien que hoy necesita ánimo.", "💬 Compártelo con quien está pasando por un momento difícil."],
-    "oracion": ["Si esta oración es para ti, escribe Amén.", "Si la haces tuya, escribe Amén.", "Si la sientes tuya, escribe Amén."],
+    "oracion": ["Guarda esta oración para volver a ella.", "Compártela con alguien a quien quieras acompañar.", "Haz una pausa y reza estas palabras a tu ritmo."],
 }
 TEMAS_ORACION = ["la ansiedad y los pensamientos que no dejan dormir", "la familia", "el trabajo y la provisión del día a día", "la salud propia o de un ser querido",
                  "el cansancio y las ganas de rendirse", "el perdón (dar y recibir)", "la gratitud", "la soledad", "una decisión difícil",
@@ -29,6 +29,10 @@ Tu voz: cercana, serena, humilde y compasiva. Hablas de tú (nunca "vos" ni "vos
 Terreno común: Dios, Jesús, la oración, la confianza, la esperanza. Nada que divida a católicos y evangélicos (sin Virgen, santos, doctrina, política).
 Prohibido: prometer dinero, prosperidad, sanidades o milagros concretos; presionar ("comparte o no recibirás"); inventar citas bíblicas; escribir referencias bíblicas (como 23:1) en tus textos; usar "está escrito", "la Biblia dice" o similares.
 Estilo: frases cortas con imágenes concretas y cotidianas, sin clichés gastados, sin repetir ideas ni arranques entre publicaciones.
+Escribes para reels narrados. La primera frase debe reconocer una situación concreta: cuidar a todos, esperar una llamada, una casa vacía, preocuparse por los hijos. Evita introducciones, amenazas espirituales y promesas de viralidad.
+Cada pieza incluye "gancho" (20-90 caracteres, se pronuncia al principio, sin emoji) y "portada" (10-45 caracteres, de 3 a 7 palabras, sin emoji). No repitas el gancho en el cuerpo.
+Las reflexiones incluyen "narracion" (180-380 caracteres) con una situación, una idea que la desarrolle y un cierre cálido. La frase de portada no sustituye el desarrollo.
+Hashtags: de 4 a 5 en minúscula, prioriza #dios #jesus #amen y una etiqueta relacionada con el mensaje. El sistema decide la prueba de #fyp. No afirmes que una etiqueta garantiza visitas.
 Respondes SIEMPRE con un único objeto JSON válido, sin texto antes ni después."""
 
 
@@ -40,22 +44,22 @@ def construir_prompt(faltan, candidatos, temas, recientes):
 
 1) VERSÍCULOS (publicación de la mañana). Elige de esta lista (NO escribas el versículo, solo su id), todos distintos entre sí:
 {ver}
-Para cada uno: "id", "destacado" (el comienzo EXACTO del versículo, copiado tal cual y con su coma o punto y coma final si la hay, 3 a 12 palabras, que se verá en dorado), "parrafo1" (30-240 caracteres: un gancho humano que conecte el versículo con la vida real, empieza con 1 emoji), "parrafo2" (30-240 caracteres: una aplicación práctica y cálida, empieza con 1 emoji), "hashtags" (4 a 6, en español o con #fe).
+Para cada uno: "id", "destacado" (el comienzo EXACTO del versículo, copiado tal cual y con su coma o punto y coma final si la hay, 3 a 12 palabras, que se verá en dorado), "parrafo1" (30-240 caracteres: un gancho humano que conecte el versículo con la vida real, empieza con 1 emoji), "parrafo2" (30-240 caracteres: una aplicación práctica y cálida, empieza con 1 emoji), "hashtags" (4 a 5, en español o con #fe).
 
 2) REFLEXIONES (publicación de la tarde). Una frase que dé ánimo, original, sin citar la Biblia.
-Para cada una: "frase" (30-140 caracteres), "destacado" (comienzo EXACTO de la frase, 1 a 8 palabras), "parrafo1" y "parrafo2" (30-240 caracteres cada uno, empiezan con 1 emoji), "hashtags" (4 a 6).
+Para cada una: "frase" (30-140 caracteres), "destacado" (comienzo EXACTO de la frase, 1 a 8 palabras), "parrafo1" y "parrafo2" (30-240 caracteres cada uno, empiezan con 1 emoji), "hashtags" (4 a 5).
 
 3) ORACIONES (publicación de la noche). Una por cada tema, en este orden:
 {temas_txt}
-Para cada una: "tema", "frase" (40-125 caracteres, la frase corta que aparece en la imagen, en primera persona, se dirige a Dios), "destacado" (comienzo EXACTO de la frase, 1 a 3 palabras, p. ej. "Señor,"), "oracion" (la oración completa, 350-800 caracteres, primera persona, concreta, termina exactamente con "En el nombre de Jesús, amén."), "parrafo1" (30-240 caracteres, empieza con 1 emoji: gancho para la descripción), "hashtags" (4 a 6).
+Para cada una: "tema", "frase" (40-125 caracteres, la frase corta que aparece en la imagen, en primera persona, se dirige a Dios), "destacado" (comienzo EXACTO de la frase, 1 a 3 palabras, p. ej. "Señor,"), "oracion" (la oración completa, 350-500 caracteres, primera persona, concreta, termina exactamente con "En el nombre de Jesús, amén."), "parrafo1" (30-240 caracteres, empieza con 1 emoji: gancho para la descripción), "hashtags" (4 a 5).
 
 Ya existen estas frases; no repitas ideas ni arranques:
 {rec}
 
 Formato de respuesta (solo JSON):
-{{"versiculos":[{{"id":"","destacado":"","parrafo1":"","parrafo2":"","hashtags":["#fe"]}}],
- "reflexiones":[{{"frase":"","destacado":"","parrafo1":"","parrafo2":"","hashtags":["#fe"]}}],
- "oraciones":[{{"tema":"","frase":"","destacado":"","oracion":"","parrafo1":"","hashtags":["#fe"]}}]}}"""
+{{"versiculos":[{{"id":"","destacado":"","gancho":"","portada":"","parrafo1":"","parrafo2":"","hashtags":["#dios","#jesus","#amen","#fe"]}}],
+ "reflexiones":[{{"frase":"","destacado":"","gancho":"","portada":"","narracion":"","parrafo1":"","parrafo2":"","hashtags":["#dios","#jesus","#amen","#fe"]}}],
+ "oraciones":[{{"tema":"","frase":"","destacado":"","gancho":"","portada":"","oracion":"","parrafo1":"","hashtags":["#dios","#jesus","#amen","#fe"]}}]}}"""
 
 
 def llamar_claude(prompt, cfg):
@@ -95,9 +99,12 @@ def marcar(frase, destacado):
 
 def ensamblar(tipo, it, ident, v=None):
     """Convierte lo que devuelve la IA en una publicación completa de la cola."""
-    cta = CTA[tipo][ident % 3]
+    cta = CTA[tipo][(ident // 3) % 3]
     base = {"id": ident, "turno": {"versiculo": "manana", "reflexion": "tarde", "oracion": "noche"}[tipo], "tipo": tipo,
             "hashtags": " ".join(it["hashtags"]), "estado": "pendiente", "creado": hoy(), "publicado": None, "intentos": 0}
+    for campo in ("gancho", "portada", "narracion"):
+        if it.get(campo):
+            base[campo] = it[campo]
     if tipo == "versiculo":
         base.update(texto=marcar(v["texto"], it["destacado"]), referencia=v["ref"], id_versiculo=it["id"],
                     descripcion=f'{con_emoji(it["parrafo1"], "🙏")}\n\n{con_emoji(it["parrafo2"], "✨")}\n\n{cta}')
@@ -107,6 +114,7 @@ def ensamblar(tipo, it, ident, v=None):
     else:
         base.update(texto=marcar(it["frase"], it["destacado"]), referencia="", oracion=it["oracion"], tema=it.get("tema", ""),
                     descripcion=f'{con_emoji(it["parrafo1"], "🕯️")}\n\n🙏 Oración completa:\n\n{it["oracion"]}\n\n{cta}')
+    base["hashtags"] = " ".join(editorial.hashtags(base, config()))
     return base
 
 
@@ -126,27 +134,36 @@ def generar(forzar=False, intentos_max=4):
     cola = cargar("cola.json")
     banco = cargar("banco_versiculos.json")
     pendientes = [c for c in cola if c.get("estado") == "pendiente"]
-    if len(pendientes) > cfg["pendientes_minimos_para_generar"] and not forzar:
-        print(f"Hay {len(pendientes)} publicaciones pendientes; no hace falta generar más todavía.")
+    objetivos = cfg.get("publicaciones_por_semana", {"versiculos": 7, "reflexiones": 7, "oraciones": 7})
+    tipos = {"versiculos": "versiculo", "reflexiones": "reflexion", "oraciones": "oracion"}
+    necesarios = {k: n if forzar else max(0, n * 2 - sum(c["tipo"] == tipos[k] for c in pendientes))
+                  for k, n in objetivos.items()}
+    if not any(necesarios.values()):
+        print("Hay al menos dos semanas de contenido pendiente por cada tipo.")
         return 0
 
-    candidatos = candidatos_versiculos(cola, banco)
-    if len(candidatos) < 7:
-        raise SystemExit("El banco tiene menos de 7 versículos verificados.")
+    candidatos = candidatos_versiculos(cola, banco, cuantos=max(12, necesarios["versiculos"]))
+    if len(candidatos) < necesarios["versiculos"]:
+        raise SystemExit("No hay suficientes versículos verificados para esta tanda.")
     n_oraciones = sum(1 for c in cola if c.get("tipo") == "oracion")
-    temas = [TEMAS_ORACION[(n_oraciones + i) % len(TEMAS_ORACION)] for i in range(7)]
+    temas = [TEMAS_ORACION[(n_oraciones + i) % len(TEMAS_ORACION)] for i in range(necesarios["oraciones"])]
     previos = [validar.plano(c["texto"]) for c in cola] + [c.get("oracion", "") for c in cola if c.get("oracion")]
 
     buenos = {"versiculos": [], "reflexiones": [], "oraciones": []}
     usados_ids = set()
     for intento in range(1, intentos_max + 1):
-        faltan = {k: 7 - len(v) for k, v in buenos.items()}
+        faltan = {k: necesarios[k] - len(v) for k, v in buenos.items()}
         if not any(faltan.values()):
             break
         libres = {i: v for i, v in candidatos.items() if i not in usados_ids}
         print(f"Intento {intento}: pido {faltan}")
         try:
             datos = extraer_json(llamar_claude(construir_prompt(faltan, libres, temas[len(buenos['oraciones']):], previos), cfg))
+            if not isinstance(datos, dict):
+                raise ValueError("La respuesta debe ser un objeto JSON")
+            for clave in buenos:
+                if not isinstance(datos.get(clave, []), list) or any(not isinstance(it, dict) for it in datos.get(clave, [])):
+                    raise ValueError(f"La lista {clave} tiene formato incorrecto")
         except (json.JSONDecodeError, ValueError) as e:
             aviso(f"Respuesta no válida (JSON): {e}")
             continue
@@ -175,15 +192,17 @@ def generar(forzar=False, intentos_max=4):
         for quien, p in rechazos:
             print(f"  descartado ({quien}): {'; '.join(p)}")
 
-    if any(len(v) < 7 for v in buenos.values()):
-        error("No he conseguido 21 publicaciones válidas; no se ha añadido nada a la cola.")
+    if any(len(v) < necesarios[k] for k, v in buenos.items()):
+        error("No he conseguido toda la tanda válida; no se ha añadido nada a la cola.")
         return 1
 
     siguiente = max([c["id"] for c in cola] + [0]) + 1
     estado = "pendiente" if cfg["aprobar_automaticamente"] else "borrador"
     nuevas = []
-    for d in range(7):
+    for d in range(max(necesarios.values())):
         for tipo, clave in (("versiculo", "versiculos"), ("reflexion", "reflexiones"), ("oracion", "oraciones")):
+            if d >= len(buenos[clave]):
+                continue
             it, v = buenos[clave][d]
             pub = ensamblar(tipo, it, siguiente, v)
             pub["estado"] = estado

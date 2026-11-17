@@ -15,6 +15,13 @@ CONFIG_POR_DEFECTO = {
     "publicar_como": "reel",          # "reel" o "imagen"
     "compartir_en_feed": True,
     "con_musica": True,
+    "con_voz": True,
+    "voz": "es-MX-DaliaNeural",
+    "velocidad_voz": "+4%",
+    "duracion_maxima": 90,
+    "hashtags_base": ["#dios", "#jesus", "#amen"],
+    "hashtag_descubrimiento": "#fyp",
+    "publicaciones_por_semana": {"versiculos": 1, "reflexiones": 2, "oraciones": 7},
     "aprobar_automaticamente": True,  # False: lo nuevo queda como "borrador" hasta que lo apruebes
     "hashtags_max": 5,
     "modelo": "claude-sonnet-5-5",
