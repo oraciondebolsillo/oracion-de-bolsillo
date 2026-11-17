@@ -8,7 +8,7 @@ Una vez configurado, el sistema hace solo todo esto:
 
 Tú solo tienes que hacer esta configuración **una vez** (≈ 1 hora). Después, revisar de vez en cuando.
 
-> La actualización incluye diez pruebas de regresión y muestras de los tres formatos generadas con Edge TTS. La publicación con la nueva portada debe verificarse en el primer despliegue de GitHub Actions. El simulacro del paso 7 comprueba la conexión y la disponibilidad del archivo sin publicar.
+> La actualización incluye doce pruebas de regresión y muestras de los tres formatos generadas con Edge TTS. La publicación con la nueva portada debe verificarse en el primer despliegue de GitHub Actions. El simulacro del paso 7 comprueba la conexión y la disponibilidad del archivo sin publicar.
 
 ---
 
@@ -81,6 +81,7 @@ Repositorio → **Settings → Secrets and variables → Actions → New reposit
 - Diario, 02:17 UTC: oración. 21:17 Bogotá y 20:17 Ciudad de México del día anterior.
 - Son horas de inicio de GitHub Actions. La preparación y las colas pueden retrasar la publicación.
 - Voz Dalia (es-MX), velocidad +4%. Edge TTS recibe el guion y devuelve audio y tiempos de cada palabra. Requiere conexión. Si la voz falla, se detiene esa ejecución y la pieza sigue pendiente.
+- Los guiones nuevos se solicitan a Anthropic en lotes pequeños con salida JSON estructurada. En Sonnet 5.5 se desactiva el razonamiento previo para reservar los tokens al texto.
 - La oración completa se escucha en el vídeo. El texto cambia siguiendo el audio, con música baja y cierre para seguir la cuenta. No se genera animación de personajes.
 - `datos/config.json` controla la voz, el límite de duración y los hashtags. `con_voz: false` recupera el formato anterior.
 - Hashtags amplios en minúscula, máximo cinco. #fyp se alterna por id con #oracion para comparar resultados, sin asumir que garantice alcance. Se guardan los hashtags usados y el formato en el historial de publicación.
