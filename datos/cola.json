@@ -1895,9 +1895,13 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#fe #oración #soledad #Dios #compañía",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-10",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-17T09:48:22Z",
+      "ig_media_id": "17991644082083424",
+      "enlace": "https://www.instagram.com/reel/Df1pNAGFfRo/"
+    },
     "intentos": 0,
     "texto": "**Aquí estoy,** Dios, con una silla vacía al lado. Siéntate conmigo esta noche.",
     "referencia": "",
