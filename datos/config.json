@@ -8,9 +8,20 @@
   "modelo": "claude-sonnet-5-5",
   "pendientes_minimos_para_generar": 21,
   "minimo_aviso_por_turno": 3,
-  "cierre_descripcion": {
-    "versiculo": "🤍 Sígueme para recibir un versículo cada mañana.",
-    "reflexion": "🤍 Sígueme para recibir una reflexión cada tarde.",
-    "oracion": "🤍 Sígueme: cada noche una oración para ti."
+  "cierre_descripcion": {},
+  "con_voz": true,
+  "voz": "es-MX-DaliaNeural",
+  "velocidad_voz": "+4%",
+  "duracion_maxima": 90,
+  "hashtags_base": [
+    "#dios",
+    "#jesus",
+    "#amen"
+  ],
+  "hashtag_descubrimiento": "#fyp",
+  "publicaciones_por_semana": {
+    "versiculos": 1,
+    "reflexiones": 2,
+    "oraciones": 7
   }
 }
