@@ -1867,10 +1867,15 @@
     "id": 106,
     "turno": "manana",
     "tipo": "versiculo",
-    "hashtags": "#fe #confianza #VersículoDelDía #Dios #esperanza",
-    "estado": "pendiente",
+    "hashtags": "#dios #jesus #amen #fe #fyp",
+    "estado": "publicado",
     "creado": "2026-11-10",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-18T20:37:56Z",
+      "ig_media_id": "18152134366562672",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/Df5YW3NhwHl/"
+    },
     "intentos": 0,
     "texto": "**Encomienda a Jehová tu camino,** Y confía en él; y él hará.",
     "referencia": "Salmos 37:5",
