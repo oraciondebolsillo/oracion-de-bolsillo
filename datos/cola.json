@@ -1923,10 +1923,15 @@
     "id": 109,
     "turno": "manana",
     "tipo": "versiculo",
-    "hashtags": "#fe #valentía #VersículoDelDía #Dios #ánimo",
-    "estado": "pendiente",
+    "hashtags": "#dios #jesus #amen #fe #oracion",
+    "estado": "publicado",
     "creado": "2026-11-10",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-19T20:43:57Z",
+      "ig_media_id": "18110333701950643",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/Df79zqGTdVz/"
+    },
     "intentos": 0,
     "texto": "**Mira que te mando que te esfuerces y seas valiente;** no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
     "referencia": "Josué 1:9",
