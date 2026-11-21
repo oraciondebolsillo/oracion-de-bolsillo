@@ -2397,9 +2397,14 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#dios #jesus #amen #fe #oracion",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-17",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-21T21:42:02Z",
+      "ig_media_id": "17950178625360117",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgBOCoZhgt5/"
+    },
     "intentos": 0,
     "gancho": "Esperas una llamada que no llega y el día se hace eterno",
     "portada": "Un paso ya es valentía",
