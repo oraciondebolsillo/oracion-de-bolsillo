@@ -2454,9 +2454,14 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#dios #jesus #amen #fe #oracion",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-17",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-22T21:48:19Z",
+      "ig_media_id": "18110275361343750",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgDzmKJBz-r/"
+    },
     "intentos": 0,
     "gancho": "Una casa llena de cajas y un corazón con miedo a empezar",
     "portada": "Empezar de nuevo contigo",
