@@ -2094,10 +2094,15 @@
     "id": 118,
     "turno": "manana",
     "tipo": "versiculo",
-    "hashtags": "#fe #paz #oración #VersículoDelDía #calma",
-    "estado": "pendiente",
+    "hashtags": "#dios #jesus #amen #paz #fyp",
+    "estado": "publicado",
     "creado": "2026-11-10",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-22T19:45:51Z",
+      "ig_media_id": "18063452237546403",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgDllHvhqBv/"
+    },
     "intentos": 0,
     "texto": "**Por nada estéis afanosos,** sino sean conocidas vuestras peticiones delante de Dios en toda oración y ruego, con acción de gracias. Y la paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones y vuestros pensamientos en Cristo Jesús.",
     "referencia": "Filipenses 4:6-7",
