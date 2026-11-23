@@ -2151,10 +2151,15 @@
     "id": 121,
     "turno": "manana",
     "tipo": "versiculo",
-    "hashtags": "#fe #consuelo #Dios #VersículoDelDía #sanación",
-    "estado": "pendiente",
+    "hashtags": "#dios #jesus #amen #fe #oracion",
+    "estado": "publicado",
     "creado": "2026-11-10",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-23T23:58:53Z",
+      "ig_media_id": "18260134744308750",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgGnTLWiXgJ/"
+    },
     "intentos": 0,
     "texto": "**Cercano está Jehová a los quebrantados de corazón;** Y salva a los contritos de espíritu.",
     "referencia": "Salmos 34:18",
