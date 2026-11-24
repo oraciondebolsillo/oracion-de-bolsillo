@@ -2208,10 +2208,15 @@
     "id": 124,
     "turno": "manana",
     "tipo": "versiculo",
-    "hashtags": "#fe #ayuda #VersículoDelDía #Dios #confianza",
-    "estado": "pendiente",
+    "hashtags": "#dios #jesus #amen #fe #fyp",
+    "estado": "publicado",
     "creado": "2026-11-10",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-24T22:31:24Z",
+      "ig_media_id": "18346293079257405",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgJCFRZutHf/"
+    },
     "intentos": 0,
     "texto": "**Alzaré mis ojos a los montes;** ¿De dónde vendrá mi socorro? Mi socorro viene de Jehová, Que hizo los cielos y la tierra.",
     "referencia": "Salmos 121:1-2",
