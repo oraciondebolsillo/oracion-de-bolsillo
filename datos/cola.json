@@ -2532,9 +2532,14 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#dios #jesus #amen #familia #fyp",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-17",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-24T04:48:17Z",
+      "ig_media_id": "18144851812610880",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgHIcL6hRoW/"
+    },
     "intentos": 0,
     "gancho": "Ya es tarde y sigues despierto, esperando oír la puerta y las llaves de tu hijo.",
     "portada": "Tus hijos y tu paz",
