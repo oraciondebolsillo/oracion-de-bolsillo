@@ -2610,9 +2610,14 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#dios #jesus #amen #fe #oracion",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-18",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-25T05:29:49Z",
+      "ig_media_id": "17997587823027062",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgJx9s4BHoq/"
+    },
     "intentos": 0,
     "gancho": "Llevas días dándole vueltas a una decisión y no encuentras la salida",
     "portada": "Cuando elegir se hace pesado",
