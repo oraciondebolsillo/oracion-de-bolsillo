@@ -2713,9 +2713,14 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#dios #jesus #amen #fe #fyp",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-19",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-26T02:52:13Z",
+      "ig_media_id": "17955292509289481",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgMEudrISQw/"
+    },
     "intentos": 0,
     "gancho": "Hoy solo lograste levantarte y seguir",
     "portada": "Un paso pequeño sigue siendo avance",
