@@ -2761,9 +2761,14 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#dios #jesus #amen #fe #fyp",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-20",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-26T21:39:13Z",
+      "ig_media_id": "18093234176506439",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgOFsyDpK1j/"
+    },
     "intentos": 0,
     "gancho": "Esa llamada que no llega te tiene con el estómago apretado",
     "portada": "No tienes que poder solo",
