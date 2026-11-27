@@ -2868,9 +2868,14 @@
     "turno": "manana",
     "tipo": "versiculo",
     "hashtags": "#dios #jesus #amen #fe #oracion",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-21",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-27T21:23:18Z",
+      "ig_media_id": "18119942888324689",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgQorJpTHhc/"
+    },
     "intentos": 0,
     "gancho": "Llevas semanas cuidando de todos menos de ti",
     "portada": "Tú también tienes quien te cuide",
