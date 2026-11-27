@@ -2782,9 +2782,14 @@
     "turno": "tarde",
     "tipo": "reflexion",
     "hashtags": "#dios #jesus #amen #fe #oracion",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-20",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-27T00:38:16Z",
+      "ig_media_id": "18116520601877649",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgOaMKTo-e3/"
+    },
     "intentos": 0,
     "gancho": "Nadie aplaude cuando solo logras mantenerte de pie",
     "portada": "A veces sostener ya es avanzar",
