@@ -2803,9 +2803,14 @@
     "turno": "noche",
     "tipo": "oracion",
     "hashtags": "#dios #jesus #amen #fe #fyp",
-    "estado": "pendiente",
+    "estado": "publicado",
     "creado": "2026-11-20",
-    "publicado": null,
+    "publicado": {
+      "fecha": "2026-11-27T05:08:16Z",
+      "ig_media_id": "18185423662441409",
+      "formato": "narrado_720p",
+      "enlace": "https://www.instagram.com/reel/DgO5FiZqD-R/"
+    },
     "intentos": 0,
     "gancho": "Si hoy te toca volver a empezar, esta oración es para ti",
     "portada": "Oración para volver a empezar",
